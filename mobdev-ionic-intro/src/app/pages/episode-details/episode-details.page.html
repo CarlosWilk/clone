@@ -1,9 +1,37 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>episode-details</ion-title>
+    <ion-title>Episode Details</ion-title>
+    <ion-buttons slot="end" defaultHref="/tabs/episodes">
+      <ion-back-button></ion-back-button> 
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
+  <ion-card *ngIf="episode" class="movie-card">
 
-</ion-content>
+    <ion-item>
+      <ion-icon name="episode" slot="start"></ion-icon>
+      Title: {{ episode.title }}
+    </ion-item>
+
+    <ion-item class="movie-info" lines="none"> 
+      <ion-icon name="card" slot="start"></ion-icon> 
+     Season: {{ episode.season }} Episode: {{ episode.episode }}
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="episode" slot="start"></ion-icon>
+      Release Date: {{ episode.air_date }}
+    </ion-item>
+    
+    <ion-item class="movie-mania" lines="none">  
+      <ion-icon name="calendar" slot="start"></ion-icon>
+      Characters: {{ episode.characters }} 
+    </ion-item>
+
+    <ion-item >  
+      <ion-icon name="calendar" slot="start"></ion-icon>
+     Series: {{ episode.series }}
+    </ion-item>
+  </ion-card>

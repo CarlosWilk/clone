@@ -9,45 +9,6 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'films',
-        children: [
-          {
-            path: '',
-            loadChildren: () => import('../films/films.module').then( m => m.FilmsPageModule)
-          },
-          {
-            path: ':id',
-            loadChildren: () => import('../film-details/film-details.module').then( m => m.FilmDetailsPageModule)
-          }
-        ]
-      },
-      {
-        path: 'people',
-        children: [
-          {
-            path: '',
-            loadChildren: () => import('../people/people.module').then( m => m.PeoplePageModule)
-          },
-          {
-            path: ':id',
-            loadChildren: () => import('../person-details-page/person-details-page.module').then( m => m.PersonDetailsPagePageModule)
-          }
-        ]
-      },
-      {
-        path: 'planets',
-        children: [
-          {
-            path: '',
-            loadChildren: () => import('../planets/planets.module').then( m => m.PlanetsPageModule)
-          },
-          {
-            path: ':id',
-            loadChildren: () => import('../planet-details-page/planet-details-page.module').then( m => m.PlanetDetailsPagePageModule)
-          }
-        ]
-      },
-      {
         path: 'characters',
         children: [
           {
@@ -86,7 +47,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/tabs/films',
+    redirectTo: '/tabs/characters',
     pathMatch: 'full'
   }
 ];
